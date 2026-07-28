@@ -14,14 +14,14 @@ for year in range(2010,2016):
     if response.status_code == 200:
         films = response.json()
         for film in films:
-            title = film.get('title')
-            year = film.get('year')
+            film_title = film.get('title')
+            film_year = film.get('year')
             awards = film.get('awards')
             nominations = film.get('nominations')
             best_picture = film.get('best_picture', False)
             data.append({
-                'Film Title': title,
-                'Year': year,
+                'Film Title': film_title,
+                'Year': film_year,
                 'Awards': awards,
                 'Nominations': nominations,
                 'Best Picture': best_picture
@@ -31,7 +31,7 @@ for year in range(2010,2016):
 
 fieldnames = ['Film Title', 'Year', 'Awards', 'Nominations', 'Best Picture']
 
-with open("oscar-winning-films.csv", mode='w', newline='', encoding='utf-8') as file:
+with open("coba.csv", mode='w', newline='', encoding='utf-8') as file:
     writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(data)
