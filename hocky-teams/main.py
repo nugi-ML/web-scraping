@@ -28,7 +28,7 @@ for page in range(1,26):
     else:
         print(f"Gagal mengakses halaman {page}")
 
-with open("teams_hocky.csv", mode='w', newline='', encoding='utf-8') as file:
+with open("hocky-teams.csv", mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow(['Team Name', 'Wins', 'Losses'])
     

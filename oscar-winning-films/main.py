@@ -31,7 +31,7 @@ for year in range(2010,2016):
 
 fieldnames = ['Film Title', 'Year', 'Awards', 'Nominations', 'Best Picture']
 
-with open("coba.csv", mode='w', newline='', encoding='utf-8') as file:
+with open("oscar-winning-films.csv", mode='w', newline='', encoding='utf-8') as file:
     writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(data)
